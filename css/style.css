@@ -5,6 +5,25 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik:500,700,900&display=swap');
 
 /* General Style */
+
+@media (max-width: 767px) {
+    .aside {
+        left: -270px; /* Hide off-screen */
+    }
+    .main-content {
+        padding-left: 0; /* Full width */
+    }
+    .nav-toggler.open + .aside {
+        left: 0; /* Show when toggled */
+    }
+}
+@media (max-width: 767px) {
+    .personal-info, .education, .experience, .contact-info-item, .form-item.col-6 {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
 body {
     margin: 0;
     line-height: 1.5;
