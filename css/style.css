@@ -24,6 +24,24 @@
         max-width: 100%;
     }
 }
+.skill-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  font-weight: 600;
+}
+.skill-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(255,74,87,0.15);
+}
+.skill-box img, .skill-box i {
+  font-size: 42px;
+  color: #ff4a57;
+  margin-bottom: 12px;
+}
+.laravel { width: 48px; }
 body {
     margin: 0;
     line-height: 1.5;
@@ -610,16 +628,42 @@ select {
 }
 
 .about .about-content .skills {
-    -ms-flex: 0 0 40%;
-    flex: 0 0 40%;
-    max-width: 40%;
-    margin-top: 40px;
-}
-
-.about .about-content .skills .skill-item {
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
+    margin-top: 40px;
+}
+
+/* NEW RULE: Add to create the 4-column icon grid structure seen in the image. */
+.about .about-content .skills .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the whole row horizontally */
+    text-align: center;
+}
+
+.about .about-content .skills .skill-item {
+    /* 4 columns per row for larger screens (100% / 4 = 25%) */
+    flex: 0 0 25%;
+    max-width: 25%;
+    margin-bottom: 20px;
+    padding: 0 15px; /* Use padding for spacing, consistent with padd-15 */
+}
+
+/* Optional: Add a media query for smaller screens */
+@media (max-width: 768px) {
+    .about .about-content .skills .skill-item {
+        /* 3 columns on tablets/medium screens (100% / 3 = 33.33%) */
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+}
+@media (max-width: 576px) {
+    .about .about-content .skills .skill-item {
+        /* 2 columns on mobile/small screens (100% / 2 = 50%) */
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
 }
 
 .about .about-content .skills .skill-item h5 {
@@ -632,9 +676,12 @@ select {
 }
 
 .about .about-content .skills .skill-item {
-    margin-bottom: 30px;
+    /* 4 columns per row for larger screens (100% / 4 = 25%) */
+    flex: 0 0 25%;
+    max-width: 25%;
+    margin-bottom: 20px;
+    padding: 0 15px; /* Use padding for spacing, consistent with padd-15 */
 }
-
 .about .about-content .skills .skill-item .progress {
     background-color: #e3e3e3;
     height: 8px;
